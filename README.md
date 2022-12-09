@@ -108,7 +108,7 @@ developers mailing list and have a look at the [contribution guidelinee](/CONTRI
 
 ### Tests
 
-The library provides unit tests that covers the core-functionality normally run by the [continues integration platform][ci]. Tests can also be executed manually using the PHPUnit configuration file found in the root directory.
+The library provides unit tests that covers the core-functionality normally run by the [continuous integration platform][ci]. Tests can also be executed manually using the PHPUnit configuration file found in the root directory.
 
 ## Release notes
 
