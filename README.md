@@ -99,11 +99,12 @@ $response = $instance->doMakeHttpRequestTo( 'http://example.org' );
 
 ## Contribution and support
 
-If you want to contribute work to the project please subscribe to the
-developers mailing list and have a look at the [contribution guidelinee](/CONTRIBUTING.md). A list of people who have made contributions in the past can be found [here][contributors].
+If you want to contribute work to the project you can:
 
 * [File an issue](https://github.com/SemanticMediaWiki/http-request/issues)
 * [Submit a pull request](https://github.com/SemanticMediaWiki/http-request/pulls)
+
+A list of people who have made contributions in the past can be found [here][contributors].
 
 ### Tests
 
