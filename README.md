@@ -1,11 +1,8 @@
 # Http request
 
-[![Build Status](https://secure.travis-ci.org/onoi/http-request.svg?branch=master)](http://travis-ci.org/onoi/http-request)
-[![Code Coverage](https://scrutinizer-ci.com/g/onoi/http-request/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/onoi/http-request/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/onoi/http-request/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/onoi/http-request/?branch=master)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SemanticMediaWiki/http-request/CI)](https://github.com/SemanticMediaWiki/http-request/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/onoi/http-request/version.png)](https://packagist.org/packages/onoi/http-request)
 [![Packagist download count](https://poser.pugx.org/onoi/http-request/d/total.png)](https://packagist.org/packages/onoi/http-request)
-[![Dependency Status](https://www.versioneye.com/php/onoi:http-request/badge.png)](https://www.versioneye.com/php/onoi:http-request)
 
 A minimalistic http/curl request interface that was part of the [Semantic MediaWiki][smw] code base and
 is now being deployed as independent library.
@@ -20,7 +17,7 @@ This library provides:
 
 ## Requirements
 
-- PHP 5.3 or later
+- PHP 8.0 or later
 
 ## Installation
 
@@ -30,7 +27,7 @@ dependency to your [composer.json][composer].
 ```json
 {
 	"require": {
-		"onoi/http-request": "~1.3"
+		"onoi/http-request": "~2.0"
 	}
 }
 ```
@@ -105,14 +102,17 @@ $response = $instance->doMakeHttpRequestTo( 'http://example.org' );
 If you want to contribute work to the project please subscribe to the
 developers mailing list and have a look at the [contribution guidelinee](/CONTRIBUTING.md). A list of people who have made contributions in the past can be found [here][contributors].
 
-* [File an issue](https://github.com/onoi/http-request/issues)
-* [Submit a pull request](https://github.com/onoi/http-request/pulls)
+* [File an issue](https://github.com/SemanticMediaWiki/http-request/issues)
+* [Submit a pull request](https://github.com/SemanticMediaWiki/http-request/pulls)
 
 ### Tests
 
-The library provides unit tests that covers the core-functionality normally run by the [continues integration platform][travis]. Tests can also be executed manually using the PHPUnit configuration file found in the root directory.
+The library provides unit tests that covers the core-functionality normally run by the [continuous integration platform][ci]. Tests can also be executed manually using the PHPUnit configuration file found in the root directory.
 
 ## Release notes
+
+* 2.0.0 (Under development)
+ - Increased minimum PHP requirement to 8.0
 
 * 1.3.1 (2016-01-14)
  - Extended `SocketRequest` to match a possible TLS port
@@ -142,7 +142,7 @@ The library provides unit tests that covers the core-functionality normally run 
 [GNU General Public License 2.0 or later][license].
 
 [composer]: https://getcomposer.org/
-[contributors]: https://github.com/onoi/http-request/graphs/contributors
+[contributors]: https://github.com/SemanticMediaWiki/http-request/graphs/contributors
 [license]: https://www.gnu.org/copyleft/gpl.html
-[travis]: https://travis-ci.org/onoi/http-request
+[ci]: https://github.com/SemanticMediaWiki/http-request/actions
 [smw]: https://github.com/SemanticMediaWiki/SemanticMediaWiki/
