@@ -112,27 +112,27 @@ The library provides unit tests that covers the core-functionality normally run 
 
 ## Release notes
 
-* 2.0.0 (Under development)
+### 2.0.0 (Under development)
  - Increased minimum PHP requirement to 8.0
 
-* 1.3.1 (2016-01-14)
+### 1.3.1 (2016-01-14)
  - Extended `SocketRequest` to match a possible TLS port
 
-* 1.3.0 (2015-11-23)
+### 1.3.0 (2015-11-23)
  - Deprecated `CachedCurlRequest::setCachePrefix` and `CachedCurlRequest::setExpiryInSeconds` in favor of setting it via the option
    `ONOI_HTTP_REQUEST_RESPONSECACHE_PREFIX` and `ONOI_HTTP_REQUEST_RESPONSECACHE_TTL` (any change in the expiry will auto-invalidate existing items in cache)
  - Deprecated `CachedCurlRequest::isCached` in favor of `CachedCurlRequest::isFromCache`
 
-* 1.2.0 (2015-11-09)
+### 1.2.0 (2015-11-09)
  - Added "wasAccepted" to the `SocketRequest` response output
  - Added option `ONOI_HTTP_REQUEST_FOLLOWLOCATION` to support resetting the URL location in case of a `301` HTTP response during a `SocketRequest::ping` request
 
-* 1.1.0 (2015-09-12)
+### 1.1.0 (2015-09-12)
  - Renamed `AsyncCurlRequest` to `MultiCurlRequest`
  - Deprecated `MultiCurlRequest::setCallback` and to be replaced by `MultiCurlRequest::setOption( ONOI_HTTP_REQUEST_ON_COMPLETED_CALLBACK, ... )`
  - Added `SocketRequest` to create asynchronous socket connections
 
-* 1.0.0 (2015-07-22, initial release)
+### 1.0.0 (2015-07-22, initial release)
  - Added the `HttpRequest` interface
  - Added the `CurlRequest` implementation
  - Added the `CachedCurlRequest` to extend the `CurlRequest` implementation
