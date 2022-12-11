@@ -1,8 +1,8 @@
 # Http request
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SemanticMediaWiki/http-request/CI)](https://github.com/SemanticMediaWiki/http-request/actions?query=workflow%3ACI)
-[![Latest Stable Version](https://poser.pugx.org/onoi/http-request/version.png)](https://packagist.org/packages/onoi/http-request)
-[![Packagist download count](https://poser.pugx.org/onoi/http-request/d/total.png)](https://packagist.org/packages/onoi/http-request)
+[![Latest Stable Version](https://poser.pugx.org/mediawiki/http-request/version.png)](https://packagist.org/packages/mediawiki/http-request)
+[![Packagist download count](https://poser.pugx.org/mediawiki/http-request/d/total.png)](https://packagist.org/packages/mediawiki/http-request)
 
 A minimalistic http/curl request interface that was part of the [Semantic MediaWiki][smw] code base and
 is now being deployed as independent library.
@@ -27,7 +27,7 @@ dependency to your [composer.json][composer].
 ```json
 {
 	"require": {
-		"onoi/http-request": "~2.0"
+		"mediawiki/http-request": "~2.0"
 	}
 }
 ```
