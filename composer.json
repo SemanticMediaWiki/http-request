@@ -1,12 +1,12 @@
 {
-	"name": "onoi/http-request",
+	"name": "mediawiki/http-request",
 	"type": "library",
 	"description": "A minimalistic http/curl request interface library",
 	"keywords": [
 		"http request",
 		"curl"
 	],
-	"homepage": "https://github.com/onoi/http-request",
+	"homepage": "https://github.com/SemanticMediaWiki/http-request",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
