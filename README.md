@@ -112,7 +112,7 @@ The library provides unit tests that covers the core-functionality normally run 
 
 ## Release notes
 
-### 2.0.0 (Under development)
+### 2.0.0 (2022-12-13)
  - Increased minimum PHP requirement to 8.0
 
 ### 1.3.1 (2017-01-14)
