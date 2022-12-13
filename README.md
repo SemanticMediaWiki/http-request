@@ -115,7 +115,7 @@ The library provides unit tests that covers the core-functionality normally run 
 ### 2.0.0 (Under development)
  - Increased minimum PHP requirement to 8.0
 
-### 1.3.1 (2016-01-14)
+### 1.3.1 (2017-01-14)
  - Extended `SocketRequest` to match a possible TLS port
 
 ### 1.3.0 (2015-11-23)
