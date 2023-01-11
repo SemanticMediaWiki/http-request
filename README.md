@@ -1,6 +1,6 @@
 # Http request
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SemanticMediaWiki/http-request/CI)](https://github.com/SemanticMediaWiki/http-request/actions?query=workflow%3ACI)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/http-request/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/http-request/actions?query=workflow%3ACI)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/http-request/version.png)](https://packagist.org/packages/mediawiki/http-request)
 [![Packagist download count](https://poser.pugx.org/mediawiki/http-request/d/total.png)](https://packagist.org/packages/mediawiki/http-request)
 
