@@ -112,7 +112,7 @@ class CachedCurlRequest extends CurlRequest {
 		return $response;
 	}
 
-	public function getKeysFromOptions() {
+	private function getKeysFromOptions() {
 
 		// curl_init can provide the URL which will set the value to the
 		// CURLOPT_URL option, ensure to have the URL as part of the options
@@ -132,14 +132,14 @@ class CachedCurlRequest extends CurlRequest {
 			json_encode( $this->options )
 		);
 
+		fwrite( STDERR, "\nPHP: " . PHP_VERSION . "\n" );
+		fwrite( STDERR, "JSON: " . json_encode( $this->options ) . "\n" );
+		fwrite( STDERR, "MD5: " . md5( json_encode( $this->options ) ) . "\n" );
+
 		// Reuse the handle but clear the options
 		$this->options = array();
 
 		return array( $key, $expiry );
-	}
-
-	public function getOptionsForDebug(): array {
-		return $this->options;
 	}
 
 }
