@@ -123,7 +123,7 @@ class CachedCurlRequest extends CurlRequest {
 		);
 
 		// Avoid an unsorted order that would create unstable keys
-		ksort( $this->options, SORT_STRING );
+		ksort( $this->options );
 
 		$expiry = $this->getOption( ONOI_HTTP_REQUEST_RESPONSECACHE_TTL );
 		$prefix = $this->getOption( ONOI_HTTP_REQUEST_RESPONSECACHE_PREFIX );
