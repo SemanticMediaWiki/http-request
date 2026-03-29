@@ -112,7 +112,7 @@ class CachedCurlRequest extends CurlRequest {
 		return $response;
 	}
 
-	private function getKeysFromOptions() {
+	public function getKeysFromOptions() {
 
 		// curl_init can provide the URL which will set the value to the
 		// CURLOPT_URL option, ensure to have the URL as part of the options
