@@ -55,6 +55,15 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 		$instance->setCachePrefix( 'foo:' );
 		$instance->setOption( CURLOPT_RETURNTRANSFER, true );
 
+		$json = json_encode($instance->options);
+		
+		// Helpful debug output
+		fwrite(STDERR, "\nPHP: " . PHP_VERSION . "\n");
+		fwrite(STDERR, "JSON: " . $json . "\n");
+		
+		// Always pass for now — this is just for inspection
+		$this->assertNotFalse($json);
+
 		$this->assertEquals(
 			22,
 			$instance->execute()
