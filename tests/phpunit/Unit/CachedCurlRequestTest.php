@@ -38,13 +38,20 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 
 		$cache = $this->getMockBuilder( '\Onoi\Cache\Cache' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'contains', 'fetch' ) )
+			->setMethods( [ 'contains', 'fetch' ] )
 			->getMockForAbstractClass();
 
-		$cache->expects( $this->once() )
-			->method( 'contains' )
-			->with( $this->equalTo( 'foo:onoi:http:39aa03567d7d983dab1f1bdc5dc75e84' ) )
-			->will( $this->returnValue( true ) );
+		if ( version_compare( PHP_VERSION, '8.2.0', '>=' ) ) {
+			$cache->expects( $this->once() )
+				->method( 'contains' )
+				->with( $this->equalTo( 'foo:onoi:http:40f45decb6e5aa031fb9add61045bbb2' ) )
+				->will( $this->returnValue( true ) );
+		} else {
+			$cache->expects( $this->once() )
+				->method( 'contains' )
+				->with( $this->equalTo( 'foo:onoi:http:39aa03567d7d983dab1f1bdc5dc75e84' ) )
+				->will( $this->returnValue( true ) );
+		}
 
 		$cache->expects( $this->once() )
 			->method( 'fetch' )
@@ -69,15 +76,24 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 
 		$cache = $this->getMockBuilder( '\Onoi\Cache\Cache' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'contains' ) )
+			->setMethods( [ 'contains' ] )
 			->getMockForAbstractClass();
 
-		$cache->expects( $this->exactly( 2 ) )
-			->method( 'contains' )
-			->withConsecutive(
-				[ $this->equalTo( 'onoi:http:7ccbcfd552a597d67077d6cc037580ac' ) ],
-				[ $this->equalTo( 'onoi:http:e2015ad4244c4663f10f305e299d5c4f' ) ]
-			);
+		if ( version_compare( PHP_VERSION, '8.2.0', '>=' ) ) {
+			$cache->expects( $this->exactly( 2 ) )
+				->method( 'contains' )
+				->withConsecutive(
+					[ $this->equalTo( 'onoi:http:fb5f4cec184805a163be587063e6a72a' ) ],
+					[ $this->equalTo( 'onoi:http:e2015ad4244c4663f10f305e299d5c4f' ) ]
+				);
+		} else {
+			$cache->expects( $this->exactly( 2 ) )
+				->method( 'contains' )
+				->withConsecutive(
+					[ $this->equalTo( 'onoi:http:7ccbcfd552a597d67077d6cc037580ac' ) ],
+					[ $this->equalTo( 'onoi:http:e2015ad4244c4663f10f305e299d5c4f' ) ]
+				);
+		}
 
 		$instance = new CachedCurlRequest( curl_init(), $cache );
 
@@ -92,15 +108,24 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 
 		$cache = $this->getMockBuilder( '\Onoi\Cache\Cache' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'contains', 'save' ) )
+			->setMethods( [ 'contains', 'save' ] )
 			->getMockForAbstractClass();
 
-		$cache->expects( $this->exactly( 2 ) )
-			->method( 'contains' )
-			->withConsecutive(
-				[ $this->equalTo( 'onoi:http:236b194825be3d614ce5fc1b7763a278' ) ],
-				[ $this->equalTo( 'onoi:http:823a603f972819c10d13f32b14460573' ) ]
-			);
+		if ( version_compare( PHP_VERSION, '8.2.0', '>=' ) ) {
+			$cache->expects( $this->exactly( 2 ) )
+				->method( 'contains' )
+				->withConsecutive(
+					[ $this->equalTo( 'onoi:http:2b9630899f52846eb4a5ecb95cec297f' ) ],
+					[ $this->equalTo( 'onoi:http:823a603f972819c10d13f32b14460573' ) ]
+				);
+		} else {
+			$cache->expects( $this->exactly( 2 ) )
+				->method( 'contains' )
+				->withConsecutive(
+					[ $this->equalTo( 'onoi:http:236b194825be3d614ce5fc1b7763a278' ) ],
+					[ $this->equalTo( 'onoi:http:823a603f972819c10d13f32b14460573' ) ]
+				);
+		}
 
 		$instance = new CachedCurlRequest( curl_init( 'http://example.org' ), $cache );
 
@@ -116,15 +141,24 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 
 		$cache = $this->getMockBuilder( '\Onoi\Cache\Cache' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'save', 'contains' ) )
+			->setMethods( [ 'save', 'contains' ] )
 			->getMockForAbstractClass();
 
-		$cache->expects( $this->once() )
-			->method( 'save' )
-			->with(
-				$this->equalTo( 'foo:onoi:http:b87e897ea862a410aff82e3122e2d955' ),
-				$this->anything(),
-				$this->equalTo( 42 ) );
+		if ( version_compare( PHP_VERSION, '8.2.0', '>=' ) ) {
+			$cache->expects( $this->once() )
+				->method( 'save' )
+				->with(
+					$this->equalTo( 'foo:onoi:http:77da068c8dd8aa7667ca414a86a9bddf' ),
+					$this->anything(),
+					$this->equalTo( 42 ) );
+		} else {
+			$cache->expects( $this->once() )
+				->method( 'save' )
+				->with(
+					$this->equalTo( 'foo:onoi:http:b87e897ea862a410aff82e3122e2d955' ),
+					$this->anything(),
+					$this->equalTo( 42 ) );
+		}
 
 		$instance = new CachedCurlRequest(
 			curl_init(),
@@ -146,10 +180,10 @@ class CachedCurlRequestTest extends \PHPUnit\Framework\TestCase {
 			->disableOriginalConstructor()
 			->getMockForAbstractClass();
 
-		$constants = array(
+		$constants = [
 			'ONOI_HTTP_REQUEST_RESPONSECACHE_PREFIX',
 			'ONOI_HTTP_REQUEST_RESPONSECACHE_TTL'
-		);
+		];
 
 		$instance = new CachedCurlRequest( curl_init(), $cache );
 
