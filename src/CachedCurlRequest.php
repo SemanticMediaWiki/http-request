@@ -138,4 +138,8 @@ class CachedCurlRequest extends CurlRequest {
 		return array( $key, $expiry );
 	}
 
+	public function getOptionsForDebug(): array {
+		return $this->options;
+	}
+
 }
