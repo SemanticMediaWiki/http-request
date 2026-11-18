@@ -27,7 +27,7 @@ class CachedCurlRequest extends CurlRequest {
 	private $cache;
 
 	/**
-	 * @var boolean
+	 * @var bool
 	 */
 	private $isFromCache = false;
 
@@ -46,7 +46,7 @@ class CachedCurlRequest extends CurlRequest {
 	 * @deprecated since 1.3, use option ONOI_HTTP_REQUEST_RESPONSECACHE_TTL instead
 	 * @since  1.0
 	 *
-	 * @param integer $expiry
+	 * @param int $expiry
 	 */
 	public function setExpiryInSeconds( $expiry ) {
 		$this->setOption( ONOI_HTTP_REQUEST_RESPONSECACHE_TTL, (int)$expiry );
@@ -66,7 +66,7 @@ class CachedCurlRequest extends CurlRequest {
 	 * @deprecated since 1.3, use CachedCurlRequest::isFromCache instead
 	 * @since  1.0
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isCached() {
 		return $this->isFromCache();
@@ -75,7 +75,7 @@ class CachedCurlRequest extends CurlRequest {
 	/**
 	 * @since  1.3
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isFromCache() {
 		return $this->isFromCache;
@@ -133,9 +133,9 @@ class CachedCurlRequest extends CurlRequest {
 		);
 
 		// Reuse the handle but clear the options
-		$this->options = array();
+		$this->options = [];
 
-		return array( $key, $expiry );
+		return [ $key, $expiry ];
 	}
 
 }

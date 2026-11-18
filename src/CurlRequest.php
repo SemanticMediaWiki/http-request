@@ -18,7 +18,7 @@ class CurlRequest implements HttpRequest {
 	/**
 	 * @var array
 	 */
-	protected $options = array();
+	protected $options = [];
 
 	/**
 	 * @since 1.0
@@ -35,7 +35,7 @@ class CurlRequest implements HttpRequest {
 	/**
 	 * @since 1.0
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function ping() {
 
@@ -46,13 +46,13 @@ class CurlRequest implements HttpRequest {
 		// Copy the handle to avoid diluting the resource
 		$handle = curl_copy_handle( $this->handle );
 
-		curl_setopt_array( $handle, array(
+		curl_setopt_array( $handle, [
 			CURLOPT_HEADER => false,
 			CURLOPT_RETURNTRANSFER, true,
 			CURLOPT_CONNECTTIMEOUT => 5,
 			CURLOPT_FRESH_CONNECT => false,
 			CURLOPT_FAILONERROR => true
-		) );
+		] );
 
 		curl_exec( $handle );
 
@@ -115,7 +115,7 @@ class CurlRequest implements HttpRequest {
 	/**
 	 * @since 1.0
 	 *
-	 * @return integer
+	 * @return int
 	 */
 	public function getLastErrorCode() {
 		return curl_errno( $this->handle );
@@ -127,7 +127,7 @@ class CurlRequest implements HttpRequest {
 	 * @return mixed
 	 */
 	public function execute() {
-		$this->options = array();
+		$this->options = [];
 		return curl_exec( $this->handle );
 	}
 
